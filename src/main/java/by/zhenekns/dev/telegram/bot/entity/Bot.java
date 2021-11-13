@@ -12,6 +12,7 @@ import com.pengrad.telegrambot.request.*;
 
 import javax.xml.crypto.Data;
 import java.io.File;
+import java.util.Locale;
 import java.util.TimerTask;
 
 public class Bot extends TimerTask {
@@ -57,7 +58,9 @@ public class Bot extends TimerTask {
                                       "/get_pleasant_phrase - Приятную фразочку для моей кошечки❤\n" +
                                       "/get_husband_voice - Услышать мужа\uD83D\uDC68\uD83C\uDFFD\u200D\uD83D\uDCBB\n"+
                                       "/get_gif - любовное послание от тайного поклонника\uD83E\uDD77\uD83C\uDFFD");
-        } else {
+        } else if(message.text().toUpperCase(Locale.ROOT).contains("ху")){
+            request = new SendMessage(chatId, "Ты думаешь я тебя настолько плохо знаю, что не смог предугадать что ты напишешь сюда ХУЙ??? Челл, я гений\uD83D\uDC68\uD83C\uDFFD\u200D\uD83D\uDCBB\uD83D\uDC68\uD83C\uDFFD\u200D\uD83D\uDCBB\uD83D\uDC68\uD83C\uDFFD\u200D\uD83D\uDCBB");
+        }else {
             request = new SendMessage(chatId, "Ээээ нееет, тебе малышка, разрешено только читать приятные словечки и фразочки, а не писать сюда всякое, говорю тут я \uD83D\uDC3C ");
         }
         bot.execute(request);
